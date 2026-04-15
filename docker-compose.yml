@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8095:8080"
+    configs:
+      - source: dsock
+        target: /docker.sock
+configs:
+  dsock:
+    file: /var/run/docker.sock
